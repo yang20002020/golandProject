@@ -1,0 +1,23 @@
+syntax="proto3";
+option go_package = "/pb"; //存储路径
+package pb; //包名
+//手机类型
+enum PhoneType {
+ HOME=0;
+ WORK=1;
+}
+//手机
+message Phone {
+    PhoneType type=1;
+    string number=2;
+}
+//人
+message Person{
+ int32 id=1;
+ string name=2;
+ repeated Phone phones=3;
+}
+//联系薄
+message ContactBook{
+ repeated Person persons=1;
+}
